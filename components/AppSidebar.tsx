@@ -33,6 +33,8 @@ import {
 } from "./ui/dropdown-menu";
 import { Sheet, SheetTrigger } from "./ui/sheet";
 import AddUserForm from "./AddUserForm";
+import AddProductForm from "./AddProductForm";
+import AddCategory from "./AddCategory";
 
 export default function AppSidebar() {
   return (
@@ -93,12 +95,29 @@ export default function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Sheet>
-                    <SheetTrigger>
-                      Add Product
-                      <Plus />
+                    <SheetTrigger className="w-full">
+                      <SidebarMenuButton>
+                        <Plus />
+                        Add Product
+                      </SidebarMenuButton>
                     </SheetTrigger>
 
-                    {/* <AddUserForm /> */}
+                    <AddProductForm />
+                  </Sheet>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Sheet>
+                    <SheetTrigger className="w-full">
+                      <SidebarMenuButton>
+                        <Plus />
+                        Add Category
+                      </SidebarMenuButton>
+                    </SheetTrigger>
+
+                    <AddCategory />
                   </Sheet>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -143,9 +162,9 @@ export default function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/orders">
+                  <Link href="/payment">
                     <Shirt />
-                    See All Orders
+                    See All Payment
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
